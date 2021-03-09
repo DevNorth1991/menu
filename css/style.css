@@ -1,0 +1,198 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto', sans-serif;
+        font-family: 'Caveat', cursive;
+    }
+    /*estilos para el container menu*/
+    
+    .container-menu {
+        margin: 15px auto;
+        width: 1000px;
+        height: 950px;
+        padding: 2.5px;
+        background-color: white;
+        border: 2px solid gray;
+        display: flex;
+        perspective: 1500px;
+    }
+    /* ocultamos la pagina delante por ahora para trabajar mas comodos  */
+    
+    .pagina-izquierda,
+    .pagina-central,
+    .pagina-derecha {
+        margin: 2px;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to right bottom, #0b0c0e, #3e4040, #767878, #b4b6b4, #f7f7f5);
+    }
+    
+    h1 {
+        font-size: 25px;
+        color: black;
+        margin-bottom: 0.75em;
+    }
+    
+    h3 {
+        font: 20px;
+        font-weight: 600;
+    }
+    
+    hr {
+        width: 100px;
+        height: 3px;
+        background-image: linear-gradient(to right, #0e0b0b, #362d30, #5d515c, #807a8e, #9da8c3);
+    }
+    
+    .container-items {
+        text-align: center;
+    }
+    
+    .item .imgMenu {
+        width: 130px;
+        height: 130px;
+        margin-bottom: 15px;
+    }
+    
+    .item .imgMenu img {
+        width: 130px;
+        height: 130px;
+        object-fit: cover;
+        -webkit-box-shadow: 3px -1px 2px 0px rgba(228, 236, 236, 0.986);
+        -moz-box-shadow: 3px -1px 2px 0px rgba(232, 247, 250, 0.986);
+        box-shadow: 3px -1px 2px 0px rgba(226, 229, 231, 0.938);
+        transition: all (25ms);
+    }
+    /*sobre imagenes*/
+    
+    .item .imgMenu a:hover img {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+    /* estilos para cada caja contenedora de item */
+    
+    .item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .item p {
+        width: 75%;
+        color: white;
+        font-size: 1.5em;
+        font-weight: 200;
+        text-align: center;
+    }
+    /*estilos para el boton de menu */
+    
+    .btn-ver-menu {
+        width: 200px;
+        margin: 10px auto;
+        padding: 5px;
+        cursor: pointer;
+        background-color: rgb(245, 231, 231);
+        border: 2px solid white;
+        border-radius: 3px;
+    }
+    
+    .btn-ver-menu:hover {
+        transform: translateY(10px);
+        transition: all(250ms);
+        box-shadow: 0px -5px 10px #0b0c0e;
+    }
+    /*contactos*/
+    
+    .pagina-izquierda-delante p {
+        font-size: 1em;
+        font-weight: 600;
+    }
+    /*efectos de movimiento*/
+    
+    .pagina-izquierda {
+        transform: rotateY(180deg);
+        transition: all 1s;
+        transform-origin: right;
+        transform-style: preserve-3d;
+        z-index: 10;
+        /*traemos al frente la primer pagina*/
+    }
+    /*mediante la clse lado debemos y la propiedad backFace-visibility hiden ocultaremso la cara de la msma cuando esta este rorada  en 180 grados  */
+    
+    .lado {
+        backface-visibility: hidden;
+    }
+    
+    .pagina-izquierda-delante {
+        position: absolute;
+        top: 0;
+        left: 55px;
+        transform: rotateY( 180deg);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+    .pagina-izquierda-delante img {
+        margin: 5px auto;
+        border-radius: 5px;
+    }
+    /*pagina derecha animacion */
+    
+    .pagina-derecha {
+        transform: rotateY(-180deg);
+        transform-origin: left;
+        transition: all 1s;
+        transform-style: preserve-3d;
+    }
+    
+    .ladoDerechaAtras {
+        backface-visibility: hidden;
+    }
+    
+    .pagina-derechaAtras {
+        transform: rotateY(180deg);
+        border: double 10px rgb(6, 14, 14);
+        border-right: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    /*anadimos las clases para poder llamarlas desde jquery*/
+    
+    .paginaIzquierda2 {
+        transform: rotateY(0deg);
+    }
+    
+    .paginaDerecha2 {
+        transform: rotateY(0deg);
+    }
+    /*button close*/
+    
+    .btnCerrar {
+        margin: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 0;
+        right: 0px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        border-radius: 50%;
+        font-weight: 700;
+    }
+    
+    .btnCerrar:hover {
+        cursor: pointer;
+        padding: 5px;
+        background-color: #767878;
+        font-size: 1.5em;
+    }
